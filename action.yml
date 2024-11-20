@@ -1,0 +1,27 @@
+name: 'Install bundle build utility'
+description: 'Bundle create release information about onecx products.'
+author: 'andrejpetras'
+branding:
+  icon: edit
+  color: blue
+inputs:
+  version:
+    description: 'Version of the bundle build utility'
+    required: false
+    default: '0.3.0'
+  os:
+    description: 'Binary os (Darwin,Linux,Windows)'
+    required: false
+    default: 'Linux'
+  platform:
+    description: 'Binary platform (amr64,i386,x86_64)'
+    required: false
+    default: 'x86_64'
+  download_url:
+    description: 'Download bundle URL template.'
+    required: false
+    default: 'https://github.com/onecx/bundle/releases/download/${version}/bundle_${os}_${platform}.tar.gz'
+outputs: {}
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
